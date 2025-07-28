@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Burooj - The House of Mandi</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora for body, Cinzel Decorative for a stylized, grand heading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for the theme */
+        body {
+            font-family: 'Lora', serif;
+            /* UPDATED: A rich, deep emerald green background */
+            background-color: #013220; 
+            /* UPDATED: Islamic pattern with a soft green color */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23bfa978' fill-opacity='0.08'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-9h-4v-1h4v-4h1v4h9v-4h1v4h9v-4h1v4h9v-4h1v4h9v-4h1v4h9v-4h1v4h9v-4h1v4h9v-4h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .font-heading {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        /* Style for active tab */
+        .tab-active {
+            background-color: #bfa978; /* Muted Gold */
+            color: #013220; /* Dark Green */
+            font-weight: 600;
+        }
+        .text-accent {
+             color: #bfa978; /* Muted Gold */
+        }
+         .border-accent {
+             border-color: #bfa978;
+        }
+        /* Enhanced image styles */
+        .menu-item img {
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover img {
+            transform: scale(1.05);
+        }
+        /* Loading shimmer effect */
+        .loading-shimmer {
+            background: linear-gradient(90deg, #024731 25%, #035b3d 50%, #024731 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="text-stone-200">
+
+    <!-- Header Section -->
+    <header class="py-6 md:py-8 text-center bg-[#013220]/80 backdrop-blur-sm border-b-2 border-accent/30">
+        <h1 class="font-heading text-4xl md:text-6xl text-white tracking-widest">Al-Burooj</h1>
+        <p class="text-accent text-lg mt-2">The Authentic House of Mandi</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <!-- Welcome Section -->
+        <section class="text-center mb-12">
+            <h2 class="font-heading text-3xl md:text-4xl text-accent mb-3">Ahlan wa Sahlan</h2>
+            <p class="max-w-3xl mx-auto text-stone-300 italic">
+                Welcome to Al-Burooj. Experience the true essence of Arabian hospitality and indulge in the rich, smoky flavors of our traditional Mandi, cooked to perfection.
+            </p>
+        </section>
+
+        <!-- Menu Navigation Tabs -->
+        <div id="menu-tabs" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+            <button data-category="mandi" class="tab-btn px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300 tab-active">Mandi Specials</button>
+            <button data-category="grills" class="tab-btn px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300">From The Grill</button>
+            <button data-category="appetizers" class="tab-btn px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300">Appetizers</button>
+            <button data-category="desserts" class="tab-btn px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300">Desserts</button>
+            <button data-category="beverages" class="tab-btn px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300">Beverages</button>
+        </div>
+
+        <!-- Menu Items Grid -->
+        <div id="menu-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Menu items will be injected here by JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 mt-12 bg-[#013220]/80 border-t-2 border-accent/30">
+        <p class="text-stone-400">&copy; 2025 Al-Burooj. A Genuine Taste of Arabia.</p>
+    </footer>
+
+    <script>
+        // --- DATA ---
+        // Enhanced menu with authentic food images from Unsplash
+        const menuData = {
+            mandi: [
+                { 
+                    name: "Chicken Mandi", 
+                    description: "Tender chicken slow-cooked with aromatic basmati rice in a tandoor.", 
+                    price: "₹450", 
+                    image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Mutton Mandi", 
+                    description: "Fall-off-the-bone mutton, infused with traditional spices and smoky rice.", 
+                    price: "₹580", 
+                    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Fish Al Faham Mandi", 
+                    description: "Charcoal-grilled fish fillet served atop our signature Mandi rice.", 
+                    price: "₹620", 
+                    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Al-Burooj Special Mix Mandi", 
+                    description: "A grand platter with both chicken and mutton for the ultimate feast.", 
+                    price: "₹750", 
+                    image: "https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+            ],
+            grills: [
+                { 
+                    name: "Chicken Al-Faham", 
+                    description: "Butterflied chicken marinated in Arabian spices and grilled over charcoal.", 
+                    price: "₹380", 
+                    image: "https://images.unsplash.com/photo-1532636119814-b4b8c6b5c4e7?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Mutton Kebab Platter", 
+                    description: "A selection of succulent, minced mutton kebabs, served with mint chutney.", 
+                    price: "₹480", 
+                    image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Grilled Prawns", 
+                    description: "Juicy prawns marinated in garlic and herbs, grilled to perfection.", 
+                    price: "₹550", 
+                    image: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+            ],
+            appetizers: [
+                { 
+                    name: "Hummus with Pita", 
+                    description: "Classic creamy chickpea dip, drizzled with olive oil and served with warm pita.", 
+                    price: "₹220", 
+                    image: "https://images.unsplash.com/photo-1571197119282-7c4ad5de055b?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Fattoush Salad", 
+                    description: "A refreshing Levantine salad with mixed greens and crispy fried pita.", 
+                    price: "₹180", 
+                    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Mutabbal", 
+                    description: "A smoky eggplant dip blended with tahini, garlic, and lemon juice.", 
+                    price: "₹240", 
+                    image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+            ],
+            desserts: [
+                { 
+                    name: "Kunafa", 
+                    description: "A beloved Middle Eastern dessert of spun pastry, soaked in syrup and layered with cheese.", 
+                    price: "₹250", 
+                    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Baklava", 
+                    description: "Rich, sweet pastry made of layers of filo filled with chopped nuts.", 
+                    price: "₹280", 
+                    image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Umm Ali", 
+                    description: "A delicious Egyptian bread pudding, rich with milk, cream, and nuts.", 
+                    price: "₹220", 
+                    image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+            ],
+            beverages: [
+                { 
+                    name: "Sulaimani Chai", 
+                    description: "A fragrant and spiced black tea without milk, a perfect digestive.", 
+                    price: "₹80", 
+                    image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Mint Lime Cooler", 
+                    description: "An invigorating blend of fresh mint and lime, topped with soda.", 
+                    price: "₹120", 
+                    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+                { 
+                    name: "Laban", 
+                    description: "A traditional, savory yogurt drink to complement your meal.", 
+                    price: "₹100", 
+                    image: "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
+                },
+            ]
+        };
+
+        // --- LOGIC ---
+        const menuContent = document.getElementById('menu-content');
+        const menuTabs = document.getElementById('menu-tabs');
+
+        // Function to create image with loading state
+        function createImageElement(src, alt, onLoad) {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = alt;
+            img.className = 'w-full h-48 object-cover';
+            
+            // Add loading shimmer initially
+            img.classList.add('loading-shimmer');
+            
+            img.onload = function() {
+                this.classList.remove('loading-shimmer');
+                if (onLoad) onLoad();
+            };
+            
+            img.onerror = function() {
+                this.classList.remove('loading-shimmer');
+                this.src = `https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80`;
+                this.alt = 'Al-Burooj Special Dish';
+            };
+            
+            return img;
+        }
+
+        // Function to render menu items
+        function renderMenu(category) {
+            menuContent.innerHTML = '';
+            const items = menuData[category];
+            if (!items) return;
+
+            items.forEach((item, index) => {
+                const menuItemDiv = document.createElement('div');
+                menuItemDiv.className = 'menu-item bg-[#024731]/70 rounded-lg overflow-hidden shadow-lg border border-green-900/80 transform hover:shadow-lg hover:shadow-green-400/10 hover:border-accent/60 transition-all duration-300 opacity-0 translate-y-4';
+                
+                const img = createImageElement(item.image, item.name);
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'p-5';
+                contentDiv.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-semibold text-white">${item.name}</h3>
+                        <p class="text-xl font-bold text-accent whitespace-nowrap">${item.price}</p>
+                    </div>
+                    <p class="text-stone-300 mt-2 text-sm italic">${item.description}</p>
+                `;
+                
+                menuItemDiv.appendChild(img);
+                menuItemDiv.appendChild(contentDiv);
+                menuContent.appendChild(menuItemDiv);
+                
+                // Animate in with stagger
+                setTimeout(() => {
+                    menuItemDiv.classList.remove('opacity-0', 'translate-y-4');
+                }, index * 100);
+            });
+        }
+        
+        // Event listener for tab clicks
+        menuTabs.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-btn')) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('tab-active'));
+                e.target.classList.add('tab-active');
+                const category = e.target.dataset.category;
+                renderMenu(category);
+            }
+        });
+
+        // Initial render on page load - defaulting to Mandi
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu('mandi');
+        });
+
+    </script>
+</body>
+</html>
